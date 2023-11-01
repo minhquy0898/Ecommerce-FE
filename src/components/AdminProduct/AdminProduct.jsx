@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import './AdminProduct.css'
-import { Button, Form, Modal } from 'antd'
+import { Button, Form, Modal ,Input} from 'antd'
 import { PlusOutlined } from '@ant-design/icons'
 import TableComponent from '../TableComponent/TableComponent'
 import InputFormComponent from '../InputFormComponent/InputFormComponent'
 
 const AdminProduct = () => {
+    const [form] = Form.useForm();
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [stateProduct, setStateProduct] = useState({
         name: '',
@@ -23,8 +24,9 @@ const AdminProduct = () => {
         setIsModalOpen(false);
     };
 
-    const onFinish = () => {
-        console.log(stateProduct)
+    const onFinish = (value) => {
+        console.log('value',value)
+        console.log('state',stateProduct)
     }
     const handleOnChange = (e) => {
         if (e.target && e.target.name) {
@@ -55,6 +57,7 @@ const AdminProduct = () => {
             </div>
             <Modal title="Tạo sản phẩm" open={isModalOpen} onCancel={handleCancel} onOk={handleOk}>
                 <Form
+                   form={form}
                     name="basic"
                     labelCol={{ span: 8 }}
                     wrapperCol={{ span: 16 }}
@@ -68,7 +71,12 @@ const AdminProduct = () => {
                         name="name"  // Đặt name cho trường này
                         rules={[{ required: true, message: 'Please input your name!' }]}
                     >
-                        <InputFormComponent value={stateProduct.name} onChange={handleOnChange} name="name" />
+                        <InputFormComponent value={stateProduct.name} onChange={(value)=> {
+                              setStateProduct({
+                                ...stateProduct,
+                                "name": value,
+                            });
+                        }} name="name" />
                     </Form.Item>
 
                     <Form.Item
@@ -76,7 +84,12 @@ const AdminProduct = () => {
                         name="Type"
                         rules={[{ required: true, message: 'Please input your type!' }]}
                     >
-                        <InputFormComponent value={stateProduct.type} onChange={handleOnChange} name="type" />
+                        <InputFormComponent value={stateProduct.type} onChange={(value)=> {
+                              setStateProduct({
+                                ...stateProduct,
+                                "type": value,
+                            });
+                        }}  name="type" />
 
                     </Form.Item>
 
@@ -85,7 +98,12 @@ const AdminProduct = () => {
                         name="quantity"
                         rules={[{ required: true, message: 'Please input your Quantity!' }]}
                     >
-                        <InputFormComponent value={stateProduct.quantity} onChange={handleOnChange} name="quantity" />
+                        <InputFormComponent value={stateProduct.quantity} onChange={(value)=> {
+                              setStateProduct({
+                                ...stateProduct,
+                                "quantity": value,
+                            });
+                        }} name="quantity" />
 
                     </Form.Item>
 
@@ -94,7 +112,12 @@ const AdminProduct = () => {
                         name="price"
                         rules={[{ required: true, message: 'Please input your Price!' }]}
                     >
-                        <InputFormComponent value={stateProduct.price} onChange={handleOnChange} name="price" />
+                        <InputFormComponent value={stateProduct.price} onChange={(value)=> {
+                              setStateProduct({
+                                ...stateProduct,
+                                "price": value,
+                            });
+                        }} name="price" />
 
                     </Form.Item>
 
@@ -103,7 +126,12 @@ const AdminProduct = () => {
                         name="description"
                         rules={[{ required: true, message: 'Please input your Description!' }]}
                     >
-                        <InputFormComponent value={stateProduct.description} onChange={handleOnChange} name="description" />
+                        <InputFormComponent value={stateProduct.description} onChange={(value)=> {
+                              setStateProduct({
+                                ...stateProduct,
+                                "description": value,
+                            });
+                        }} name="description" />
 
                     </Form.Item>
 
@@ -112,16 +140,21 @@ const AdminProduct = () => {
                         name="rating"
                         rules={[{ required: true, message: 'Please input your Rating!' }]}
                     >
-                        <InputFormComponent value={stateProduct.rating} onChange={handleOnChange} name="rating" />
+                        <InputFormComponent value={stateProduct.rating} onChange={(value)=> {
+                              setStateProduct({
+                                ...stateProduct,
+                                "rating": value,
+                            });
+                        }} name="rating" />
 
                     </Form.Item>
 
-                    {/* <Form.Item
+                    <Form.Item
                         wrapperCol={{ offset: 8, span: 16 }}>
                         <Button type="primary" htmlType="submit">
                             Submit
                         </Button>
-                    </Form.Item> */}
+                    </Form.Item> 
                 </Form>
             </Modal>
         </div>
