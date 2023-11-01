@@ -1,0 +1,34 @@
+.card_body {
+    text-align: center;
+}
+
+.product_name {
+    color: #777;
+    display: block;
+    font-size: 15px;
+    margin-top: 6px;
+    margin-bottom: 8px;
+}
+
+.product_code {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.product_diameter {
+    font-size: 14px;
+}
+
+.product_price {
+    font-size: 15px;
+    color: #b1b1b1;
+    margin-bottom: 8px;
+    text-decoration: line-through;
+}
+
+.price_sale {
+    font-size: 18px;
+    color: #e10c00;
+    font-weight: 600;
+}

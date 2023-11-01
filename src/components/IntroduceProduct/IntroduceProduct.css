@@ -1,0 +1,161 @@
+/* .icon_main {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #ffc124bf;
+} */
+
+.mg-l-10 {
+    margin-left: 10px;
+}
+
+.icon {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #000000;
+    /* margin: 0px auto; */
+}
+
+.icon_3 {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+.icon_3 img {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.icon img {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+.icon_3 {
+    margin-left: 30px;
+}
+
+.background-img {
+    background-image: url("../../assets/img/background-img.jpg");
+}
+
+.introduce_top img {
+    width: 100%;
+    min-height: 184px;
+}
+
+.introduce_content {
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    /* justify-content: space-around; */
+}
+
+.item {
+    padding: 0px 116px;
+}
+
+.icon_inner {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-color: #ffc124bf;
+    margin: 0px auto;
+    position: relative;
+    transition: all 0.3s ease;
+    background-image: url("../../assets/img/introduce-4.png");
+}
+
+.icon {
+    margin-left: 56px;
+}
+
+.icon_inner img {
+    position: absolute;
+    top: 10px;
+    right: 9px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+.desc {
+    font-size: 20px;
+    text-align: center;
+}
+
+.introduce_img {
+    display: flex;
+    padding: 0px 120px;
+    margin-top: 20px;
+    margin-left: -18px;
+}
+
+.introduce_img img {
+    width: 600px;
+}
+
+/* ======================== Carousel======================= */
+.carousel_info {
+    margin-top: 40px;
+}
+.carousel_img {
+    position: relative;
+}
+
+.carousel_content {
+    position: absolute;
+    top: 100px;
+    margin-left: 140px;
+}
+
+.carousel_img img {
+    width: 1426px;
+    height: 500px;
+}
+
+.carousel_sub img {
+    width: 180px;
+    position: absolute;
+    top: 90px;
+    margin-left: 626px;
+}
+.content_title {
+    text-transform: uppercase;
+    font-size: 38px;
+}
+
+.content_text {
+    color: #796752;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.content_desc {
+    font-size: 16px;
+}
+
+.carousel_content a {
+    width: 160px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #796752;
+    border-radius: 50px;
+    font-size: 16px;
+    color: #fff;
+    padding-bottom: 4px;
+    text-transform: uppercase;
+}

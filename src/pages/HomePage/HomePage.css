@@ -1,0 +1,32 @@
+.homepage {
+    padding: 0px 25px;
+}
+
+.homepage_nav {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    background-color: #796752;
+    height: 44px;
+    padding: 0px 120px;
+    width: 1236px;
+}
+/* =================Card================ */
+.products {
+    margin-top: 50px;
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.card {
+    padding: 0px 100px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    align-items: center;
+    gap: 20px;
+    max-width: 100%;
+}
