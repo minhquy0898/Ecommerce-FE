@@ -344,7 +344,7 @@ const AdminProduct = () => {
                     style={{ maxWidth: 600 }}
                     onFinish={onFinish}
                     autoComplete="on"
-                // form={form}
+                    form={form}
                 >
                     <Form.Item
                         label="Name"
