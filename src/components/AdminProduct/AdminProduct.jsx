@@ -69,32 +69,38 @@ const AdminProduct = () => {
     }
 
     useEffect(() => {
-        form.setFieldsValue(stateProductDetails)
-    }, [form, setStateProductDetails])
+        // form.setFieldsValue(stateProductDetails)
+    }, [stateProductDetails])
 
-    useEffect(() => {
-        if (rowSelected) {
-            fetchGetDetailsProduct(rowSelected)
-        }
-    }, [rowSelected])
+    // useEffect(() => {
+    //     if (rowSelected) {
+    //         fetchGetDetailsProduct(rowSelected)
+    //     }
+    // }, [rowSelected])
 
     console.log('StateProduct', stateProductDetails)
-    const handleDetailsProduct = () => {
-        if (rowSelected) {
-            fetchGetDetailsProduct()
-        }
+    const handleDetailsProduct = (value) => {
+        console.log("value", value)
+        setStateProductDetails({
+            name: value?.name,
+            type: value?.type,
+            quantity: value?.quantity,
+            price: value?.price,
+            description: value?.description,
+            rating: value?.rating,
+            image: value?.image
+        })
         setIsOpenDrawer(true)
-        console.log('rowSelected', rowSelected)
     }
 
     const { data, isLoading, isSuccess, isError } = mutation
 
     const { isLoading: isLoadingProducts, data: products } = useQuery({ queryKey: ['products'], queryFn: getAllProducts })
-    const renderAction = () => {
+    const renderAction = (value) => {
         return (
             <div>
                 <DeleteOutlined style={{ color: 'red', fontSize: '20px', cursor: 'pointer' }} />
-                <EditOutlined onClick={handleDetailsProduct} style={{ color: 'red', fontSize: '20px', cursor: 'pointer' }} />
+                <EditOutlined onClick={()=> {handleDetailsProduct(value)}} style={{ color: 'red', fontSize: '20px', cursor: 'pointer' }} />
             </div>
         )
     }
@@ -119,8 +125,8 @@ const AdminProduct = () => {
         {
             title: 'Action',
             dataIndex: 'action',
-            render: renderAction
-
+            render:(_,value)=> (
+                renderAction(value))
         },
     ];
     const dataTable = products?.data.length && products?.data.map((product) => {

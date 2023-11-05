@@ -101,13 +101,13 @@ const SignInPage = () => {
                         />
                     </div>
                     {data?.status === 'ERR' && <span style={{ color: 'red' }}>{data?.message}</span>}
-                    <Loading isLoading={isLoading}>
+                    {/* <Loading isLoading={isLoading}> */}
                         <button
                             disabled={!email.length || !password.length}
                             onClick={handleSignIn}
                             className='btn_login'>Đăng nhập
                         </button>
-                    </Loading>
+                    {/* </Loading> */}
                     <p className='foget_password'>Quên mật khẩu ?</p>
                     <p className='create_account'>Chưa có tài khoản ? <span onClick={handleNavigateSignUp} style={{ cursor: 'pointer' }}>Tạo tài khoản</span></p>
                 </div>
