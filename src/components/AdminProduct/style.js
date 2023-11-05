@@ -1,7 +1,7 @@
 import { Upload } from "antd";
-import styled from 'styled-components';
+import styled from "styled-components";
 
-export const WrapperUploadFile = styled(Upload)`
+export const WrapperUploadFileAdmin = styled(Upload)`
     .ant-upload-icon{
         display : none;
     },
@@ -14,4 +14,5 @@ export const WrapperUploadFile = styled(Upload)`
     .ant-upload-list-item ant-upload-list-item-error{
         display : none;
     }
+    
 `   

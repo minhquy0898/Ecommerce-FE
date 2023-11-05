@@ -20,6 +20,9 @@ const HeaderComponent = ({ isHiddenSearch = false, isHiddenCart = false, isHidde
     const handleNavigateLogin = () => {
         navigate('/sign-in')
     }
+    const handleNavigationHome = () => {
+        navigate('/')
+    }
 
     const handleLogout = async () => {
         setLoading(true)
@@ -47,7 +50,7 @@ const HeaderComponent = ({ isHiddenSearch = false, isHiddenCart = false, isHidde
     return (
         <div>
             <Row className='header_row' style={{ justifyContent: isHiddenSearch && isHiddenSearch ? 'space-between' : 'unset' }}>
-                <Col className='header_img' span={6}><img src="https://donghoduyanh.com/images/config/logo_new_mt_1578296465.png" alt="" /></Col>
+                <Col onClick={handleNavigationHome} className='header_img' span={6}><img src="https://donghoduyanh.com/images/config/logo_new_mt_1578296465.png" alt="" /></Col>
                 {!isHiddenSearch && (
                     <Col className='header_search' span={9}>
                         <ButtonInputSearch

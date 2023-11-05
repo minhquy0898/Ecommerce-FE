@@ -41,8 +41,8 @@ const AdminPage = () => {
                     mode="inline"
                     style={{
                         width: 256,
-                        height: '100vh',
                         boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
+                        height: '100vh'
                     }}
                     items={items}
                     onClick={handleOnClick}
