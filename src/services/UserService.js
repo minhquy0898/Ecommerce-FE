@@ -12,8 +12,27 @@ export const signupUser = async (data) => {
     return res.data
 }
 
+
 export const getDetailUser = async (id, access_token) => {
     const res = await axiosJwt.get(`http://localhost:3000/api/user/get-detail/${id}`, {
+        headers: {
+            token: `Beare ${access_token}`,
+        }
+    },)
+    return res.data
+}
+
+export const deleteUser = async (id, access_token, data) => {
+    const res = await axiosJwt.delete(`http://localhost:3000/api/user/delete-user/${id}`, data, {
+        headers: {
+            token: `Beare ${access_token}`,
+        }
+    },)
+    return res.data
+}
+
+export const getAllUser = async (access_token) => {
+    const res = await axiosJwt.get(`http://localhost:3000/api/user/getAll`, {
         headers: {
             token: `Beare ${access_token}`,
         }
@@ -41,4 +60,3 @@ export const updateUser = async (id, data, access_token) => {
     })
     return res.data
 }
-
